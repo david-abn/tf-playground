@@ -42,15 +42,15 @@ module "elb" {
 }
 
 module "eks" {
-  source                = "../../modules/eks"
-  env                   = var.env
-  eks_cluster_role_arn  = module.security.eks_cluster_role_arn
-  eks_nodes_role_arn    = module.security.eks_nodes_role_arn
-  public_subnet_ids     = module.networking.public_subnet_ids
-  private_subnet_ids    = module.networking.private_subnet_ids
-  instance_type         = var.instance_type
-  eks_cluster_sg_id     = module.security.eks_cluster_sg_id
-  eks_nodes_sg_id       = module.security.eks_nodes_sg_id
+  source               = "../../modules/eks"
+  env                  = var.env
+  eks_cluster_role_arn = module.security.eks_cluster_role_arn
+  eks_nodes_role_arn   = module.security.eks_nodes_role_arn
+  public_subnet_ids    = module.networking.public_subnet_ids
+  private_subnet_ids   = module.networking.private_subnet_ids
+  instance_type        = var.instance_type
+  eks_cluster_sg_id    = module.security.eks_cluster_sg_id
+  eks_nodes_sg_id      = module.security.eks_nodes_sg_id
 }
 
 module "db" {
